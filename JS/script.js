@@ -1,4 +1,4 @@
-// 1) ФИЛЬМ      УБРАНО ИЗ СКОБОК: BUYS FAVS
+// 1) ФИЛЬМ
 class Film {
   constructor(title, film_ID,  genre, persons, production, price, amount, type ) {
     this.title = title
@@ -282,28 +282,29 @@ production_list.add_production('RADiUs-TWC', 'США')     // 2
 // АКТЕРЫ
 persons = new Persons ()
 // 0
-persons.add_persons({'Том Круз':['Главная роль', 'Актер второго плана', 'Продюссер', 'Режиссер']})
+persons.add_persons({'Том Круз':[' Главная роль', ' Актер второго плана', ' Продюссер', ' Режиссер']})
 // 1
-persons.add_persons({'Джеймс Кэмерон':['Продюссер','Сценарист','Монтажер']})
+persons.add_persons({'Джеймс Кэмерон':[' Продюссер',' Сценарист',' Монтажер']})
 // 2
-persons.add_persons({'Ридли Скотт':['Продюссер','Сценарист', "Оператор"]})
+persons.add_persons({'Ридли Скотт':[' Продюссер',' Сценарист', " Оператор"]})
 // 3
-persons.add_persons({'Леонардо ДиКаприо':['Главная Роль','Сценарист']})
+persons.add_persons({'Леонардо ДиКаприо':[' Главная Роль',' Сценарист']})
 // 4
-persons.add_persons({'Квентин Тарантино':['Актер второго плана','Сценарист','Оператор','Монтажер']})
+persons.add_persons({'Квентин Тарантино':[' Актер второго плана',' Сценарист','Режиссер',' Монтажер']})
 // 5
-persons.add_persons({'Ума Турман':['Главная роль','Продюссер']})
+persons.add_persons({'Ума Турман':[' Главная роль',' Продюссер']})
 // 6
-persons.add_persons({'Сигурни Уивер':['Главная роль','Продюссер']})
+persons.add_persons({'Сигурни Уивер':[' Главная роль',' Продюссер']})
 // 7
-persons.add_persons({'Брайан Де Пальма':['Главная роль','Режиссер', 'Монтажер']})
+persons.add_persons({'Брайан Де Пальма':[' Главная роль',' Режиссер', ' Монтажер']})
 
 // ФИЛЬМЫ [название, ID, жанр, персоны, компания, цена, количество, формат]
 fund = new Fund_Control()
-
+// оператор расширения
 film1 = new Film("Криминальное Чтиво", 1,
 genre_list.title[0],
-[persons.persons_arr[4],persons.persons_arr[5]],
+[[...Object.keys(persons.persons_arr[4]),Object.values(persons.persons_arr[4])[0][2]],
+[...Object.keys(persons.persons_arr[5]),Object.values(persons.persons_arr[5])[0][0]]],
 production_list.production_arr[0],
 1000, 10, 'VHS')
 fund.add_film(film1)

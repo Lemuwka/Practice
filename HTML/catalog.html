@@ -21,9 +21,6 @@
 
     <!-- меню товаров -->
     <main>
-      <!-- <p class="persons"> // ВЫВОДЯТСЯ ОБЪЕКТЫ, ТАК ЖЕ КАК И С ПРОИЗВОДСТВОМ
-        ${fund.films_arr[i].persons}
-      </p> -->
       <script type="text/javascript">
         main = document.querySelector('main')
         for (var i = 0; i < fund.films_arr.length; i++) {
@@ -37,17 +34,29 @@
                 ${fund.films_arr[i].title}
               </p>
               <p class="price">
-                ${fund.films_arr[i].price}
+                Цена: ${fund.films_arr[i].price}
               </p>
-              <p class="genre">
-                ${fund.films_arr[i].genre}
-              </p>
-              <p class="type">
-                ${fund.films_arr[i].type}
-              </p>
-              <p class="amount">
-                ${fund.films_arr[i].amount}
-              </p>
+              <div class="details">
+                <p class="genre">
+                  Жанр: ${fund.films_arr[i].genre}
+                </p>
+                <p class="persons">
+                  Режиссер: ${fund.films_arr[i].persons[0]} <br>
+                  Актеры: ${fund.films_arr[i].persons[1]}
+                </p>
+                <p class="production">
+                  Компания: ${fund.films_arr[i].production[0]}
+                </p>
+                <p class="country">
+                  Страна: ${fund.films_arr[i].production[1]}
+                </p>
+                <p class="type">
+                  Формат: ${fund.films_arr[i].type}
+                </p>
+                <p class="amount">
+                  Количество: ${fund.films_arr[i].amount}
+                </p>
+              </div>
             </div>
             <!-- КНОПКА -->
             <a href="#" class="button">Подробнее</a>
