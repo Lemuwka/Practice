@@ -28,6 +28,7 @@ main {
 
 .pic img {
   width: 100%;
+  padding-top: 20%;
 }
 
 .pic {
@@ -53,10 +54,18 @@ h1 {
   font-size: 20px;
 }
 
+.details {
+  border: 2px solid silver;
+  border-radius: 30px;
+  width: 70%;
+  padding: 15px;
+}
+
 .info {
   display: flex;
   flex-direction:  column;
   justify-content: space-between;
+  width: 50vw;
 }
 
 .price {
@@ -66,7 +75,8 @@ h1 {
   border: 2px silver solid;
   border-radius: 30px;
   font-size: 30px;
-  margin: 20px 30px;
+  margin: 10px  0px;
+  width: auto;
   text-align: center;
   align-self: flex-start;
 }
@@ -78,6 +88,20 @@ h1 {
 
 .genre, .type, .amount, .production, .persons {
   font-size: 20px;
+}
+
+.buttons_block {
+  justify-self: center;
+  margin-left: auto;
+}
+
+.buy img, .fav img {
+  width: 80%;
+}
+
+.buy, .fav {
+  padding: 10px !important;
+  text-align: center;
 }
 
 textarea {

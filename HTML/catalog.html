@@ -33,15 +33,12 @@
               <p class="name">
                 ${fund.films_arr[i].title}
               </p>
-              <p class="price">
-                Цена: ${fund.films_arr[i].price}
-              </p>
               <div class="details">
                 <p class="genre">
                   Жанр: ${fund.films_arr[i].genre}
                 </p>
                 <p class="persons">
-                  Режиссер: ${fund.films_arr[i].persons[0]} <br>
+                  Автор: ${fund.films_arr[i].persons[0]} <br>
                   Актеры: ${fund.films_arr[i].persons[1]}
                 </p>
                 <p class="production">
@@ -58,12 +55,16 @@
                 </p>
               </div>
             </div>
-            <!-- КНОПКА -->
-            <a href="#" class="button">Подробнее</a>
+            <div class="buttons_block">
+              <p class="price">
+                Цена: ${fund.films_arr[i].price}
+              </p>
+              <a href="#" class="button fav"><img src="../IMG/fav.png"></a>
+              <a href="#" class="button buy"><img src="../IMG/buy.png"></a>
+            </div>
           </div>`
         }
       </script>
-
     </main>
 
  <form id="form2" action="../PHP/item_page.php" method="post" hidden>

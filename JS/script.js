@@ -294,7 +294,7 @@ persons.add_persons({'Квентин Тарантино':[' Актер втор�
 // 5
 persons.add_persons({'Ума Турман':[' Главная роль',' Продюссер']})
 // 6
-persons.add_persons({'Сигурни Уивер':[' Главная роль',' Продюссер']})
+persons.add_persons({'Сигурни Уивер':[' Главная роль',' Актер второго плана', ' Продюссер']})
 // 7
 persons.add_persons({'Брайан Де Пальма':[' Главная роль',' Режиссер', ' Монтажер']})
 
@@ -311,28 +311,32 @@ fund.add_film(film1)
 
 film2 = new Film("Чужой", 2,
 genre_list.title[3],
-[persons.persons_arr[2],persons.persons_arr[6]],
+[[...Object.keys(persons.persons_arr[2]),Object.values(persons.persons_arr[2])[0][1]],
+[...Object.keys(persons.persons_arr[6]),Object.values(persons.persons_arr[6])[0][0]]],
 production_list.production_arr[1],
 200, 5, 'VHS')
 fund.add_film(film2)
 
 film3 = new Film("Аватар", 3,
 genre_list.title[5],
-[persons.persons_arr[1],persons.persons_arr[6]],
+[[...Object.keys(persons.persons_arr[1]),Object.values(persons.persons_arr[1])[0][1]],
+[...Object.keys(persons.persons_arr[6]),Object.values(persons.persons_arr[6])[0][1]]],
 production_list.production_arr[2],
 303, 1, 'S-VHS')
 fund.add_film(film3)
 
 film4 = new Film("Титаник", 4,
 genre_list.title[4],
-[persons.persons_arr[1],persons.persons_arr[3]],
+[[...Object.keys(persons.persons_arr[1]),Object.values(persons.persons_arr[1])[0][0]],
+[...Object.keys(persons.persons_arr[3]),Object.values(persons.persons_arr[3])[0][0]]],
 production_list.production_arr[0],
 444, 3, 'VHS-C')
 fund.add_film(film4)
 
 film5 = new Film("Миссия: Невыполнима", 5,
 genre_list.title[1],
-[persons.persons_arr[0],persons.persons_arr[7]],
+[[...Object.keys(persons.persons_arr[7]),Object.values(persons.persons_arr[7])[0][1]],
+[...Object.keys(persons.persons_arr[0]),Object.values(persons.persons_arr[0])[0][0]]],
 production_list.production_arr[1],
 5550, 11, 'VHR')
 fund.add_film(film5)
