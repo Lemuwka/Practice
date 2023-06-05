@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script type="text/javascript" src="../JS/script.js"></script>
+    <title></title>
+  </head>
+  <body>
+
+    <h1 class="brand">
+      <a href="../HTML/catalog.html">VHS Pro :)</a>
+
+      <form id="form1" class="search" action="../PHP/search.php">
+        <input type="text" class="area" name="search" value="" placeholder="Поиск...">
+        <a href="javascript: search()" class="button"> <img src="../IMG/search.png" alt=""> </a>
+      </form>
+
+      <a class="back" href="../HTML/index.html">Назад</a>
+    </h1>
+
+    <!-- меню товаров -->
+    <main>
+      <script type="text/javascript">
+        main = document.querySelector('main')
+        for (var i = 0; i < client_list.clients_arr.length; i++) {
+          // fund.films_arr[i]
+          main.innerHTML += `<div class="row">
+            <p class="pic">
+              <img src="../IMG/client.png" >
+              ${client_list.clients_arr[i].name}
+               ID: ${client_list.clients_arr[i].client_id}
+            </p>
+            <div class="fav_block">
+              <p class = "table_line"><b>ИЗБРАННОЕ</b></p>
+              ${client_list.clients_arr[i].favorites.reduce((x, item) =>
+                x += '<p class = "table_line">Название: ' + item.title + '; Цена: ' + item.price + '</p>', '')
+              }
+            </div>
+            <div class="shop_block">
+              <p class = "table_line"><b>КОРЗИНА</b></p>
+              ${client_list.clients_arr[i].client_cart.reduce((x, item) =>
+                x += '<p class = "table_line">Название: ' + item.title + '; Цена: ' + item.price + '</p>', '')
+              }
+            </div>
+            <div class="cart_sum">
+              <p>Сумма: ${client_list.clients_arr[i].sum}</p>
+            </div>
+          </div>`
+        }
+      </script>
+    </main>
+
+ <form id="form2" action="../PHP/item_page.php" method="post" hidden>
+   <input type="text" id="crutch" name="crutch" hidden>
+ </form>
+
+<script type="text/javascript">
+
+</script>
+
+</body>

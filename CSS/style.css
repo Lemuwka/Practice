@@ -35,6 +35,40 @@ main {
   width: 20%;
   padding: 0px;
   margin: 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.fav_block {
+  overflow-y: scroll;
+  border: 2px solid silver;
+  border-radius: 10px;
+  margin: 0px 10px;
+  min-width: 30%;
+}
+
+.shop_block {
+  overflow-y: scroll;
+  border: 2px solid silver;
+  border-radius: 10px;
+  min-width: 30%;
+}
+
+.table_line {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 5px;
+  margin: 0px;
+  border-bottom: 2px solid silver;
+}
+
+.cart_sum {
+  font-size: 30px;
+  display: flex;
+}
+
+.cart_sum p {
+  margin: auto;
 }
 
 h1 a {
