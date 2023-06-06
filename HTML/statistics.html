@@ -20,9 +20,33 @@
     </h1>
 
     <!-- меню товаров -->
+
     <main>
       <script type="text/javascript">
         main = document.querySelector('main')
+        main.innerHTML += `
+        <div class="stats_block">
+          <div class="stats1">
+            ${statistics.stat_films(fund)} <br>
+            ${statistics.stat_clients(client_list)} <br>
+            ${statistics.stat_income(fund)} <br>
+          </div>
+          <div class="stats2">
+            <table>
+            <tr>
+              <td>Фильм</td>
+              <td>Кол-во покупок</td>
+              <td>Кол-во доб. в Избранное</td>
+            </tr>
+              ${
+                fund.films_arr.reduce((x, film) =>
+                x += '<tr>' + '<td>' + film.title + '</td>' + '<td>' + statistics.stat_buys(film) + '</td>' + '<td>' + statistics.stat_favs(film)+ '</td>' + '</tr>', ''
+              )
+              }
+            </table>
+          </div>
+        </div>
+        `
         for (var i = 0; i < client_list.clients_arr.length; i++) {
           // fund.films_arr[i]
           main.innerHTML += `<div class="row">

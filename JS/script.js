@@ -235,26 +235,29 @@ class Statistics {
 
   // Кол-во покупок
   stat_buys(film) {
-    console.log('Кол-во покупок: ', film.buys)
+    return(film.buys)
   }
 
   // Кол-во избранного
   stat_favs(film) {
-    console.log('Кол-во добавления в "Избранное": ', film.favs)
+    return(film.favs)
   }
 
   // Кол-во товаров
   stat_films(Fund_Control) {
     console.log('Кол-во фильмов: ', Fund_Control.films_arr.length)
+    return('Кол-во фильмов: ' + Fund_Control.films_arr.length)
   }
 
   // Кол-во клиентов
   stat_clients(Client_list) {
     console.log('Кол-во клиентов: ', Client_list.clients_arr.length)
+    return('Кол-во клиентов: ' + Client_list.clients_arr.length)
   }
 
-  stat_income() {
-    console.log('Общая прибыль: ', Client_list.clients_arr.length)
+  stat_income(Fund_Control) {
+    console.log('Общая прибыль: ', Fund_Control.total_income)
+    return('Общая прибыль: ' + Fund_Control.total_income)
   }
 }
 
@@ -357,6 +360,8 @@ client_list.add_client(client5)
 shop_cart1 = new Shop_cart()
 favorites1 = new Favorites()
 
+statistics = new Statistics()
+
 // ОПЕРАЦИИ
 
 // Просмотр "Базы данных"
@@ -364,6 +369,9 @@ persons.print_persons()
 production_list.print_production()
 fund.print_film()
 client_list.print_clients()
+statistics.stat_films(fund)
+statistics.stat_clients(client_list)
+statistics.stat_income(fund)
 
 // Команды
 client1.add_cart(film5, shop_cart1)

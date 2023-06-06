@@ -71,6 +71,57 @@ main {
   margin: auto;
 }
 
+.stats_block {
+  border: 2px solid silver;
+  border-radius: 50px;
+  width: 80%;
+  padding: 30px;
+  margin: auto;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.stats1 {
+  width: 30%;
+  height: 100%;
+  padding: 0px 20px;
+}
+
+.stats2 {
+  width: 100%;
+  padding: 0px 20px;
+  overflow-y: scroll;
+  border-left: 2px solid silver;
+}
+
+.stats2 table {
+  width: 100%;
+}
+
+.stats2 table td:first-child {
+  width: 60%;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  text-align:  left;
+}
+
+.stats2 table tr:first-child {
+  font-weight: bold;
+}
+
+.stats2 table td {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  border-radius: 15px;
+  padding: 3px 10px;
+  text-align:  center;
+}
+
+.stats2 table tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
 h1 a {
   color: white;
   text-decoration: none;
