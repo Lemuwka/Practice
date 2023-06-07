@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Админ</title>
+    <title>Добавление</title>
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
@@ -10,22 +10,45 @@
     <h1 class="brand">
       <a href="../HTML/catalog.html">VHS Pro :)</a>
 
-      <!-- <form id="form1" class="search" action="../PHP/search.php">
-        <input type="text" class="area" name="search" value="" placeholder="Поиск...">
-        <a href="javascript: search()" class="button"> <img src="../IMG/search.png" alt=""> </a>
-      </form> -->
-
       <a class="back" href="../HTML/index.html">Назад</a>
     </h1>
 
     <div class="window">
-      <h1>Администрирование</h1>
+      <h1>Работа с реестром</h1>
 
-      <nav>
-        <a href="../HTML/catalog.html">Каталог</a>
-        <a href="../HTML/statistics.html">База Данных</a>
-        <a href="../HTML/fund.html">Реестр</a>
+      <nav class="nav_list">
+        <a href="#">Фильм</a>
+        <a href="#">Клиент</a>
+        <a href="#">Персона</a>
+        <a href="#">Жанр</a>
+        <a href="#">Компания</a>
       </nav>
+
+      <form class="add_window">
+        <div class="col_1">
+          <p>Название: <input type="text" name="" value=""></p>
+          <p>Цена: <input type="text" name="" value=""></p>
+          <p>ID: <input type="text" name="" value=""></p>
+          <p>Формат: <input type="text" name="" value=""></p>
+          <p>Количество: <input type="text" name="" value=""></p>
+        </div>
+        <div class="col_2">
+          <select class="" name="" multiple>
+            <option value="" disabled selected>Персоны</option>
+            <optgroup label="персона персона 1">
+              <option value="">роль 1</option>
+              <option value="">роль 2</option>
+              <option value="">роль 3</option>
+            </optgroup>
+            <optgroup label="персона персона 2">
+              <option value="">роль 1</option>
+              <option value="">роль 2</option>
+              <option value="">роль 3</option>
+            </optgroup>
+          </select>
+        </div>
+      </form>
+
     </div>
 
   </body>

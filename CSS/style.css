@@ -261,6 +261,7 @@ input {
   padding: 10px 30px;
   transition: all 0.5s;
   margin: 20px;
+  background-color: white;
 }
 
 .window a:hover {
@@ -293,8 +294,8 @@ nav {
 
 .button:hover {
   color: white;
-  background-color: gray;
-  border-color: black;
+  background-color: silver;
+  border-color: gray;
   transition: all 0.5s;
 }
 
@@ -367,4 +368,38 @@ nav {
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
+}
+
+.add_window {
+  border: 2px solid silver;
+}
+
+.nav_list {
+  border: 2px solid silver;
+  border-radius: 30px;
+}
+
+.add_window p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add_window {
+  display: flex;
+  gap: 20px;
+}
+
+.add_window .col_1 {
+
+}
+
+.add_window .col_2 {
+  width: fit-content;
+}
+
+.add_window .col_2 select{
+  width: fit-content;
+  height: 300px;
+  font-size: 20px;
 }
