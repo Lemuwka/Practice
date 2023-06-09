@@ -16,9 +16,9 @@ class Film {
 
 // 2) КЛИЕНТ
 class Client {
-  constructor(name, client_id) {
+  constructor(name, client_ID) {
     this.name = name
-    this.client_id = client_id
+    this.client_ID = client_ID
     this.client_cart = []
     this.favorites = []
     this.sum = 0
@@ -359,8 +359,36 @@ favorites1 = new Favorites()
 
 statistics = new Statistics()
 
-// ОПЕРАЦИИ
+function init() {
+  persons_list = document.getElementById("persons_list")
+  persons.persons_arr.forEach((name, i) => {
+    optgroup = document.createElement("optgroup")
+    optgroup.setAttribute('label',Object.keys(name)[0])
+    persons_list.appendChild(optgroup)
+    Object.values(name)[0].forEach((item, i) => {
+      option = document.createElement("option")
+      option.innerHTML = item
+      optgroup.appendChild(option)
+    });
+  });
 
+  genre_li = document.getElementById("genre_list")
+  genre_list.title.forEach((title, i) => {
+    option = document.createElement("option")
+    option.innerHTML = title
+    genre_li.appendChild(option)
+  });
+
+  production_li = document.getElementById("production_list")
+  production_list.production_arr.forEach((item, i) => {
+    option = document.createElement("option")
+    option.innerHTML = item[0] + ', ' + item[1]
+    production_li.appendChild(option)
+  });
+
+}
+
+// ОПЕРАЦИИ
 // Просмотр "Базы данных"
 persons.print_persons()
 production_list.print_production()

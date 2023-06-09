@@ -396,10 +396,13 @@ nav {
 
 .add_window .col_2 {
   width: fit-content;
+  display: flex;
+  gap: 50px;
 }
 
 .add_window .col_2 select{
   width: fit-content;
   height: 300px;
+  width: 250px;
   font-size: 20px;
 }

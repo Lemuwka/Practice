@@ -5,7 +5,8 @@
     <title>Добавление</title>
     <link rel="stylesheet" href="../css/style.css">
   </head>
-  <body>
+  <script type="text/javascript" src="../JS/script.js"></script>
+  <body onload="init()">
 
     <h1 class="brand">
       <a href="../HTML/catalog.html">VHS Pro :)</a>
@@ -33,19 +34,19 @@
           <p>Количество: <input type="text" name="" value=""></p>
         </div>
         <div class="col_2">
-          <select class="" name="" multiple>
+
+          <select id="persons_list" class="" name="" multiple>
             <option value="" disabled selected>Персоны</option>
-            <optgroup label="персона персона 1">
-              <option value="">роль 1</option>
-              <option value="">роль 2</option>
-              <option value="">роль 3</option>
-            </optgroup>
-            <optgroup label="персона персона 2">
-              <option value="">роль 1</option>
-              <option value="">роль 2</option>
-              <option value="">роль 3</option>
-            </optgroup>
           </select>
+
+          <select id="genre_list" class="" name="" size="11">
+            <option value="" disabled selected>Жанр</option>
+          </select>
+
+          <select id="production_list" class="" name="" size="11">
+            <option value="" disabled selected>Компания</option>
+          </select>
+
         </div>
       </form>
 
