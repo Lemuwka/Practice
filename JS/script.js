@@ -341,6 +341,18 @@ production_list.production_arr[1],
 5550, 11, 'VHR')
 fund.add_film(film5)
 
+// Сохранение фильмов в локальное хранилище
+var jsonObjFilm1 = JSON.stringify(film1)
+localStorage.setItem ("film1", jsonObjFilm1);
+var jsonObjFilm2 = JSON.stringify(film2)
+localStorage.setItem ("film2", jsonObjFilm2);
+var jsonObjFilm3 = JSON.stringify(film3)
+localStorage.setItem ("film3", jsonObjFilm3);
+var jsonObjFilm4 = JSON.stringify(film4)
+localStorage.setItem ("film4", jsonObjFilm4);
+var jsonObjFilm5 = JSON.stringify(film5)
+localStorage.setItem ("film5", jsonObjFilm5);
+
 // Регистрация клиентов
 client_list = new Client_list()
 client1 = new Client('Олег Черепанов', 1)
@@ -359,6 +371,7 @@ favorites1 = new Favorites()
 
 statistics = new Statistics()
 
+film_id = 5
 function init() {
   persons_list = document.getElementById("persons_list")
   persons.persons_arr.forEach((name, i) => {
@@ -367,6 +380,7 @@ function init() {
     persons_list.appendChild(optgroup)
     Object.values(name)[0].forEach((item, i) => {
       option = document.createElement("option")
+      option.setAttribute('value', item)
       option.innerHTML = item
       optgroup.appendChild(option)
     });
@@ -386,6 +400,45 @@ function init() {
     production_li.appendChild(option)
   });
 
+}
+
+function submit_button() {
+  let film_title = document.getElementById('film_title').value
+  let film_price = document.getElementById('film_price').value
+  let film_format = document.getElementById('film_format').value
+  let film_amount = document.getElementById('film_amount').value
+  let persons_list = document.getElementById('persons_list')
+  let genre_list = document.getElementById('genre_list').value
+  let production_list = document.getElementById('production_list').value
+  console.log(film_title, film_price, film_format, film_amount, genre_list, production_list)
+  i = 0
+  let p = []
+  let p1 = []
+  for(option of persons_list.options) {
+                if (option.selected) {
+                    console.log(option.parentNode.label, option.value)
+                    p1.push(option.parentNode.label)
+                    p1.push(option.value)
+                    p.push(p1)
+                    p1 = []
+                    i++
+                  }
+  }
+  console.log(p)
+  if (localStorage.getItem("film_id")!=null)
+    film_id = +localStorage.getItem("film_id")
+  film_id++
+  newfilm = new Film(film_title, film_id,
+  genre_list,
+  p,
+  production_list,
+  film_price, film_amount, film_format)
+  // fund.add_film(newfilm)
+  // console.log(newfilm)
+  // console.log(fund.films_arr.length)
+  var jsonObjNewFilm = JSON.stringify(newfilm)
+  localStorage.setItem ("film" + film_id, jsonObjNewFilm);
+  localStorage.setItem('film_id', film_id)
 }
 
 // ОПЕРАЦИИ

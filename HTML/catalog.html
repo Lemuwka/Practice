@@ -23,6 +23,13 @@
     <main>
       <script type="text/javascript">
         main = document.querySelector('main')
+
+        var film_count = +localStorage.getItem("film_id")
+        console.log(film_count)
+        film1_ls = localStorage.getItem('film1')
+        film1_ls = JSON.parse(film1_ls)
+        console.log(film1_ls)
+
         for (var i = 0; i < fund.films_arr.length; i++) {
           // fund.films_arr[i]
           main.innerHTML += `<div class="row">
