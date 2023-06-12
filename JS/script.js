@@ -400,6 +400,27 @@ function init() {
     production_li.appendChild(option)
   });
 
+  films_list = document.getElementById("films_list")
+  var film_count = +localStorage.getItem("film_id")
+  console.log(film_count)
+  film1_ls = localStorage.getItem('film1')
+  film1_ls = JSON.parse(film1_ls)
+  console.log(film1_ls)
+
+  films_arr_ls = []
+  for (var i = 1; i <= film_count; i++) {
+    film = localStorage.getItem('film' + i)
+    film_ls = JSON.parse(film)
+    films_arr_ls.push(film_ls)
+  }
+
+  films_arr_ls.forEach((item, i) => {
+    option = document.createElement("option")
+    films_list.appendChild(option)
+    option.innerHTML = item.title
+  });
+
+
 }
 
 function submit_button() {
@@ -439,6 +460,10 @@ function submit_button() {
   var jsonObjNewFilm = JSON.stringify(newfilm)
   localStorage.setItem ("film" + film_id, jsonObjNewFilm);
   localStorage.setItem('film_id', film_id)
+}
+
+function film_del_button() {
+
 }
 
 // ОПЕРАЦИИ

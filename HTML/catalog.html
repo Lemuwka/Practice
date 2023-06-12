@@ -30,7 +30,15 @@
         film1_ls = JSON.parse(film1_ls)
         console.log(film1_ls)
 
-        for (var i = 0; i < fund.films_arr.length; i++) {
+        films_arr_ls = []
+        for (var i = 1; i <= film_count; i++) {
+          film = localStorage.getItem('film' + i)
+          film_ls = JSON.parse(film)
+          films_arr_ls.push(film_ls)
+        }
+        console.log(films_arr_ls)
+
+        for (var i = 0; i < films_arr_ls.length; i++) {
           // fund.films_arr[i]
           main.innerHTML += `<div class="row">
             <p class="pic">
@@ -38,33 +46,33 @@
             </p>
             <div class="info">
               <p class="name">
-                ${fund.films_arr[i].title}
+                ${films_arr_ls[i].title}
               </p>
               <div class="details">
                 <p class="genre">
-                  Жанр: ${fund.films_arr[i].genre}
+                  Жанр: ${films_arr_ls[i].genre}
                 </p>
                 <p class="persons">
-                  Автор: ${fund.films_arr[i].persons[0]} <br>
-                  Актеры: ${fund.films_arr[i].persons[1]}
+                  Автор: ${films_arr_ls[i].persons[0]} <br>
+                  Актеры: ${films_arr_ls[i].persons[1]}
                 </p>
                 <p class="production">
-                  Компания: ${fund.films_arr[i].production[0]}
+                  Компания: ${films_arr_ls[i].production.slice(0,films_arr_ls[i].production.indexOf(','))}
                 </p>
                 <p class="country">
-                  Страна: ${fund.films_arr[i].production[1]}
+                  Страна: ${films_arr_ls[i].production.slice(films_arr_ls[i].production.indexOf(',')+2)}
                 </p>
                 <p class="type">
-                  Формат: ${fund.films_arr[i].type}
+                  Формат: ${films_arr_ls[i].type}
                 </p>
                 <p class="amount">
-                  Количество: ${fund.films_arr[i].amount}
+                  Количество: ${films_arr_ls[i].amount}
                 </p>
               </div>
             </div>
             <div class="buttons_block">
               <p class="price">
-                Цена: ${fund.films_arr[i].price}
+                Цена: ${films_arr_ls[i].price}
               </p>
               <a href="#" class="button fav"><img src="../IMG/fav.png"></a>
               <a href="#" class="button buy"><img src="../IMG/buy.png"></a>

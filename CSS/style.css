@@ -281,12 +281,12 @@ nav {
   font-weight: bold;
   text-decoration: none;
   font-size: 30px;
-  float: right;
   border: 2px solid silver;
   border-radius: 20px;
   padding: 10px 40px;
   transition: all 0.5s;
   margin: 10px 15px;
+  display: block;
   margin-left: auto;
   align-self: flex-end;
   background-color: white;
@@ -372,6 +372,18 @@ nav {
 
 .add_window {
   border: 2px solid silver;
+}
+
+.del_window {
+  border: 2px solid silver;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.del_window select {
+  font-size: 20px;
+  height: 300px;
+  width: 450px;
 }
 
 .nav_list {

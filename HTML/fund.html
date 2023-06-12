@@ -29,7 +29,6 @@
         <div class="col_1">
           <p>Название: <input type="text" id="film_title" name="" value=""></p>
           <p>Цена: <input type="text" name="" id="film_price" value=""></p>
-          <p>ID: <input type="text" name="" id="film_id" value=""></p>
           <p>Формат: <input type="text" name="" id="film_format" value=""></p>
           <p>Количество: <input type="text" name="" id="film_amount" value=""></p>
         </div>
@@ -51,6 +50,14 @@
       </form>
 
         <input type="button" class="button" id="submit" name="" value="Сохранить" style="margin-right: 26px" onclick="submit_button()">
+
+        <form class="del_window">
+          <select id="films_list" class="" name="" size="11">
+            <option value="" disabled selected>Фильмы</option>
+          </select>
+
+          <input type="button" class="button" id="submit" name="" value="Удалить" style="margin-right: 26px" onclick="film_del_button()">
+        </form>
 
     </div>
 
