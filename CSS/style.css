@@ -290,6 +290,7 @@ nav {
   margin-left: auto;
   align-self: flex-end;
   background-color: white;
+  float: right;
 }
 
 .button:hover {

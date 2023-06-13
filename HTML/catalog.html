@@ -32,9 +32,15 @@
 
         films_arr_ls = []
         for (var i = 1; i <= film_count; i++) {
-          film = localStorage.getItem('film' + i)
-          film_ls = JSON.parse(film)
-          films_arr_ls.push(film_ls)
+          let film_current = 'film' + i
+          if (localStorage.getItem(film_current)!=null) {
+            film = localStorage.getItem(film_current)
+            film_ls = JSON.parse(film)
+            films_arr_ls.push(film_ls)
+          }
+          // film = localStorage.getItem('film' + i)
+          // film_ls = JSON.parse(film)
+          // films_arr_ls.push(film_ls)
         }
         console.log(films_arr_ls)
 
@@ -53,8 +59,9 @@
                   Жанр: ${films_arr_ls[i].genre}
                 </p>
                 <p class="persons">
-                  Автор: ${films_arr_ls[i].persons[0]} <br>
-                  Актеры: ${films_arr_ls[i].persons[1]}
+                  Персоны: ${films_arr_ls[i].persons.reduce((x, item) =>
+                    x += item + '; ', ' ')
+                  }
                 </p>
                 <p class="production">
                   Компания: ${films_arr_ls[i].production.slice(0,films_arr_ls[i].production.indexOf(','))}

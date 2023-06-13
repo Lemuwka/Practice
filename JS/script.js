@@ -290,7 +290,7 @@ persons.add_persons({'Ридли Скотт':[' Продюссер',' Сцена
 // 3
 persons.add_persons({'Леонардо ДиКаприо':[' Главная Роль',' Сценарист']})
 // 4
-persons.add_persons({'Квентин Тарантино':[' Актер второго плана',' Сценарист','Режиссер',' Монтажер']})
+persons.add_persons({'Квентин Тарантино':[' Актер второго плана',' Сценарист',' Режиссер',' Монтажер']})
 // 5
 persons.add_persons({'Ума Турман':[' Главная роль',' Продюссер']})
 // 6
@@ -409,15 +409,19 @@ function init() {
 
   films_arr_ls = []
   for (var i = 1; i <= film_count; i++) {
-    film = localStorage.getItem('film' + i)
-    film_ls = JSON.parse(film)
-    films_arr_ls.push(film_ls)
+    let film_current = 'film' + i
+    if (localStorage.getItem(film_current)!=null) {
+      film = localStorage.getItem(film_current)
+      film_ls = JSON.parse(film)
+      films_arr_ls.push(film_ls)
+    }
   }
 
   films_arr_ls.forEach((item, i) => {
     option = document.createElement("option")
     films_list.appendChild(option)
     option.innerHTML = item.title
+    option.value = item.film_ID
   });
 
 
@@ -463,7 +467,10 @@ function submit_button() {
 }
 
 function film_del_button() {
-
+  let films_list = document.getElementById('films_list')
+  console.log('ID фильма: ' + films_list.value)
+  localStorage.removeItem('film' + films_list.value)
+  location.reload()
 }
 
 // ОПЕРАЦИИ
