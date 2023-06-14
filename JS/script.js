@@ -341,17 +341,7 @@ production_list.production_arr[1],
 5550, 11, 'VHR')
 fund.add_film(film5)
 
-// Сохранение фильмов в локальное хранилище
-var jsonObjFilm1 = JSON.stringify(film1)
-localStorage.setItem ("film1", jsonObjFilm1);
-var jsonObjFilm2 = JSON.stringify(film2)
-localStorage.setItem ("film2", jsonObjFilm2);
-var jsonObjFilm3 = JSON.stringify(film3)
-localStorage.setItem ("film3", jsonObjFilm3);
-var jsonObjFilm4 = JSON.stringify(film4)
-localStorage.setItem ("film4", jsonObjFilm4);
-var jsonObjFilm5 = JSON.stringify(film5)
-localStorage.setItem ("film5", jsonObjFilm5);
+
 
 // Регистрация клиентов
 client_list = new Client_list()
@@ -372,6 +362,8 @@ favorites1 = new Favorites()
 statistics = new Statistics()
 
 film_id = 5
+// Функции "Реестра"
+// Вывод элементов в списках
 function init() {
   persons_list = document.getElementById("persons_list")
   persons.persons_arr.forEach((name, i) => {
@@ -427,6 +419,7 @@ function init() {
 
 }
 
+// Добавление фильма
 function submit_button() {
   let film_title = document.getElementById('film_title').value
   let film_price = document.getElementById('film_price').value
@@ -466,6 +459,7 @@ function submit_button() {
   localStorage.setItem('film_id', film_id)
 }
 
+// Удаление фильма
 function film_del_button() {
   let films_list = document.getElementById('films_list')
   console.log('ID фильма: ' + films_list.value)
@@ -473,7 +467,21 @@ function film_del_button() {
   location.reload()
 }
 
-// ОПЕРАЦИИ
+function open_genre() {
+  document.querySelector('.add_window').style.display = 'none'
+  document.querySelector('.del_window').style.display = 'none'
+  document.querySelector('#submit').style.display = 'none'
+  document.querySelector('.genre').style.display = 'flex'
+}
+
+function open_film() {
+  document.querySelector('.add_window').style.display = 'flex'
+  document.querySelector('.del_window').style.display = 'flex'
+  document.querySelector('#submit').style.display = 'block'
+  document.querySelector('.genre').style.display = 'none'
+}
+
+// ОТЛАДКА
 // Просмотр "Базы данных"
 persons.print_persons()
 production_list.print_production()
@@ -488,3 +496,15 @@ client1.add_cart(film5, shop_cart1)
 client1.add_cart(film2, shop_cart1)
 client1.add_fav(film3, favorites1)
 client1.add_fav(film1, favorites1)
+
+// Сохранение фильмов в локальное хранилище
+var jsonObjFilm1 = JSON.stringify(film1)
+localStorage.setItem ("film1", jsonObjFilm1);
+var jsonObjFilm2 = JSON.stringify(film2)
+localStorage.setItem ("film2", jsonObjFilm2);
+var jsonObjFilm3 = JSON.stringify(film3)
+localStorage.setItem ("film3", jsonObjFilm3);
+var jsonObjFilm4 = JSON.stringify(film4)
+localStorage.setItem ("film4", jsonObjFilm4);
+var jsonObjFilm5 = JSON.stringify(film5)
+localStorage.setItem ("film5", jsonObjFilm5);

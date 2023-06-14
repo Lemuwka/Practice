@@ -381,7 +381,7 @@ nav {
   font-size: 20px;
 }
 
-.del_window select {
+select {
   font-size: 20px;
   height: 300px;
   width: 450px;
@@ -418,4 +418,16 @@ nav {
   height: 300px;
   width: 250px;
   font-size: 20px;
+}
+
+.genre {
+  display: flex;
+  border: 2px solid silver;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.genre div {
+  padding: 0px 50px;
 }

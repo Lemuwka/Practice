@@ -24,6 +24,26 @@
     <main>
       <script type="text/javascript">
         main = document.querySelector('main')
+
+
+        var film_count = +localStorage.getItem("film_id")
+        console.log(film_count)
+        film1_ls = localStorage.getItem('film1')
+        film1_ls = JSON.parse(film1_ls)
+        console.log(film1_ls)
+
+        fund.films_arr = []
+        films_arr_ls = []
+        for (var i = 1; i <= film_count; i++) {
+          let film_current = 'film' + i
+          if (localStorage.getItem(film_current)!=null) {
+            film = localStorage.getItem(film_current)
+            film_ls = JSON.parse(film)
+            films_arr_ls.push(film_ls)
+            fund.add_film(film_ls)
+          }
+        }
+
         main.innerHTML += `
         <div class="stats_block">
           <div class="stats1">
@@ -53,7 +73,7 @@
             <p class="pic">
               <img src="../IMG/client.png" >
               ${client_list.clients_arr[i].name}
-               ID: ${client_list.clients_arr[i].client_id}
+               ID: ${client_list.clients_arr[i].client_ID}
             </p>
             <div class="fav_block">
               <p class = "table_line"><b>ИЗБРАННОЕ</b></p>

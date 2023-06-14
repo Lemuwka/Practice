@@ -18,10 +18,10 @@
       <h1>Работа с реестром</h1>
 
       <nav class="nav_list">
-        <a href="#">Фильм</a>
+        <a href="javascript: open_film()">Фильм</a>
         <a href="#">Клиент</a>
         <a href="#">Персона</a>
-        <a href="#">Жанр</a>
+        <a href="javascript: open_genre()">Жанр</a>
         <a href="#">Компания</a>
       </nav>
 
@@ -58,6 +58,33 @@
 
           <input type="button" class="button" id="submit" name="" value="Удалить" style="margin-right: 26px; float: none" onclick="film_del_button()">
         </form>
+
+        <form class="genre" action="index.html" method="post" style="display: none">
+
+          <div class="">
+
+            <select id="genre_li" class="genre_list" name="" size="11">
+              <option value="" disabled selected>Жанр</option>
+            </select>
+
+            <input type="button" class="button" id="submit" name="" value="Удалить" style="margin-right: 26px; float: none" onclick="">
+
+          </div>
+
+          <div class="">
+            <input type="text" name="" value="">
+            <input type="button" class="button" id="submit" name="" value="Добавить" style="margin-right: 26px; float: none" onclick="location.reload()">
+          </div>
+        </form>
+
+        <script type="text/javascript">
+          genre_li = document.getElementById("genre_li")
+          genre_list.title.forEach((title, i) => {
+            option = document.createElement("option")
+            option.innerHTML = title
+            genre_li.appendChild(option)
+          });
+        </script>
 
     </div>
 
